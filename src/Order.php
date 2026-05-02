@@ -21,4 +21,12 @@ class Order
     {
         return $this->id;
     }
+
+    public function getTotal(): float
+    {
+        return array_sum(array_map(
+            fn(Product $p) => $p->getPrice(),
+            $this->products
+        ));
+    }
 }

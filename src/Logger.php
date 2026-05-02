@@ -31,4 +31,8 @@ class Logger
 
         file_put_contents($this->logFile, $line, FILE_APPEND);
     }
+    public function log(string $level, string $message): void
+    {
+        $this->write(strtoupper($level), $message);
+    }
 }

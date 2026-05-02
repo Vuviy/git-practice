@@ -20,4 +20,9 @@ class User
     {
         return $this->email;
     }
+
+    public function isValidEmail(): bool
+    {
+        return filter_var($this->email, FILTER_VALIDATE_EMAIL) !== false;
+    }
 }
